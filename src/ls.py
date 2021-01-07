@@ -25,7 +25,7 @@ class IDGenerator:
 class Shortener:
     def __init__(self):
         self.idg = IDGenerator()
-        self.redis = Redis()#(host="redis")
+        self.redis = Redis(host="redis")
 
     def create(self, longurl: str, short: str = None):
         if (not short) or not valid.match(short):
